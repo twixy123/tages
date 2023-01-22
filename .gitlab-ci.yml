@@ -29,4 +29,4 @@ deploy:
     - main
   script:
     - chmod 400 $MASTER_SSH_KEY
-    - ssh -o StrictHostKeyChecking=no -i $MASTER_SSH_KEY "${MASTER_SSH_USER}@${MASTER_HOST}" "docker login -u ${CI_DEPLOY_USER} -p ${CI_DEPLOY_PASSWORD} ${CI_REGISTRY} && docker rm -f ${CI_PROJECT_NAME} || true && docker rmi \$(docker images -q ${DOCKER_REPO}) || true && docker run -p 80:8080 --name=$CI_PROJECT_NAME --restart=always -d ${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}"
+    - ssh -o StrictHostKeyChecking=no -i $MASTER_SSH_KEY "${MASTER_SSH_USER}@${MASTER_HOST}" "docker login -u ${CI_DEPLOY_USER} -p ${CI_DEPLOY_PASSWORD} ${CI_REGISTRY} && docker rm -f ${CI_PROJECT_NAME} || true && docker run -p 80:8080 --name=$CI_PROJECT_NAME --restart=always -d ${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}"
