@@ -1,0 +1,35 @@
+@mixin include-font-face($font_family_name, $font_file_name, $font_weight) {
+  @font-face {
+    font-family: '#{$font_family_name}';
+    // src: url('/fonts/#{$font_family_name}/#{$font_file_name}.eot');
+    src: local('#{$font_family_name}'),
+    url('/fonts/#{$font_family_name}/#{$font_file_name}.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/#{$font_family_name}/#{$font_file_name}.woff2') format('woff2'),
+    url('/fonts/#{$font_family_name}/#{$font_file_name}.woff') format('woff'),
+    url('/fonts/#{$font_family_name}/#{$font_file_name}.ttf') format('truetype');
+    unicode-range: U+000-5FF;
+    font-display: auto;
+    font-weight: $font_weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+$fonts: (
+  'sf-ui-text': ('400': 'SF-UI-Text-Regular',
+    '500': 'SF-UI-Text-Medium'
+  ),
+  'sf-pro-display': ('400': 'SF-Pro-Display-Regular',
+    '500': 'SF-Pro-Display-Medium',
+    '600': 'SF-Pro-Display-Semibold'
+  ),
+);
+
+@each $font_folder,
+$fonts_weight in $fonts {
+
+  @each $font_weight,
+  $font_value in $fonts_weight {
+    @include include-font-face($font_folder, $font_value, $font_weight)
+  }
+}

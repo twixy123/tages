@@ -1,0 +1,63 @@
+$sizes: (0, 2, 4, 6, 8, 10, 12, 14, 16, 20, 22, 24, 26, 28, 30, 36, 42, 48, 54);
+
+@each $size in $sizes {
+  .m-l-#{$size} {
+    margin-left: #{$size}px;
+  }
+
+  .m-r-#{$size} {
+    margin-right: #{$size}px;
+  }
+
+  .m-t-#{$size} {
+    margin-top: #{$size}px;
+  }
+
+  .m-b-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+
+  .m-tb-#{$size} {
+    margin-top: #{$size}px;
+    margin-bottom: #{$size}px;
+  }
+
+  .m-#{$size} {
+    margin: #{$size}px;
+  }
+
+  .m-lr-#{$size} {
+    margin-left: #{$size}px;
+    margin-right: #{$size}px;
+  }
+
+  .p-l-#{$size} {
+    padding-left: #{$size}px;
+  }
+
+  .p-r-#{$size} {
+    padding-right: #{$size}px;
+  }
+
+  .p-t-#{$size} {
+    padding-top: #{$size}px;
+  }
+
+  .p-b-#{$size} {
+    padding-bottom: #{$size}px;
+  }
+
+  .p-tb-#{$size} {
+    padding-top: #{$size}px;
+    padding-bottom: #{$size}px;
+  }
+
+  .p-lr-#{$size} {
+    padding-left: #{$size}px;
+    padding-right: #{$size}px;
+  }
+
+  .p-#{$size} {
+    margin: #{$size}px;
+  }
+}

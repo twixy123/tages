@@ -1,0 +1,8 @@
+a, .link {
+  color: map-get($grey, 'darken-1');
+
+  &:hover {
+    color: map-get($shades, 'black');
+    transition: .5 all ease;
+  }
+}

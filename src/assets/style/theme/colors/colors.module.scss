@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+@each $color_name, $color_color in $colors {
+  @each $color_type, $color_value in $color_color {
+    :export {
+      #{$color_name}_#{$color_type}: $color_value;
+    }
+  }
+}

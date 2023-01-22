@@ -1,0 +1,86 @@
+$shades: (
+  'black': #000,
+  'white': #fff,
+  'transparent': transparent,
+);
+
+$grey: (
+  'lighten-6': #F2F2F2,
+  'lighten-5': #eee,
+  'lighten-4': #E5E5E5,
+  // 'lighten-3': #,
+  // 'lighten-2': #,
+  'lighten-1': #888,
+  'base': #828282,
+  'darken-1': #727783,
+  // 'darken-2': #,
+  'darken-3': #4F4F4F,
+  // 'darken-4': #,
+);
+
+$green: (
+  //  'lighten-1': #,
+  'base': #27AE60,
+  //  'darken-1': #,
+);
+
+$red: (
+  //'lighten-1': #,
+  'base': #EB5757,
+  // 'darken-1': #,
+);
+
+$colors: (
+  'grey': $grey,
+  'green': $green,
+  'red': $red,
+  'shades': $shades,
+);
+
+@mixin background-color($color_value) {
+  background-color: $color_value !important;
+  border-color: $color_value !important;
+}
+
+@mixin text-color($color_value) {
+  color: $color_value !important;
+  caret-color: $color_value !important;
+}
+
+@each $color_name,
+$color_value in $shades {
+  .#{$color_name} {
+    @include background-color($color_value);
+  }
+
+  .#{$color_name}--text {
+    @include text-color($color_value);
+  }
+}
+
+@each $color_name, $color_color in $colors {
+  @each $color_type, $color_value in $color_color {
+    @if ($color_type =='base') {
+      .#{$color_name} {
+        @include background-color($color_value);
+      }
+
+      .#{$color_name}--text {
+        @include text-color($color_value);
+      }
+    }
+
+    @else if ($color_type !='shades') {
+      .#{$color_name}.#{$color_type} {
+        @include background-color($color_value);
+      }
+
+      .#{$color_name}--text.text--#{$color_type} {
+        @include text-color($color_value);
+      }
+    }
+  }
+}
+
+$main-bg: map-get($grey, 'lighten-4');
+$main-color: map-get($shades, 'black');

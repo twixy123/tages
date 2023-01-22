@@ -1,0 +1,144 @@
+$break_xl: 1488px;
+$break_lg: 1200px;
+$break_md: 960px;
+$break_sm: 720px;
+$break_xs: 540px;
+$break_xxs: 480px;
+
+$offset: 24px;
+$offset_md: 18px;
+
+@mixin wrapper-offset($val) {
+  padding-left: $val;
+  padding-right: $val;
+}
+
+@mixin row-offset($val) {
+  margin-left: ($val * -1);
+  margin-right: ($val * -1);
+}
+
+@mixin wrapper {
+  width: 100%;
+  max-width: $break_xl;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include wrapper-offset($offset);
+
+  @include xl-block() {
+    max-width: calc( $break_xl - 15% );
+  }
+
+  @include lg-block() {
+    max-width: calc( $break_lg - 10% );
+  }
+
+  @include md-block() {
+    max-width: calc( $break_md - 15% );
+  }
+
+  @include sm-block() {
+    max-width: calc( $break_sm - 15% );
+  }
+
+  @include xs-block() {
+    max-width: calc( $break_xs - 20% );
+  }
+
+  @include xs-block() {
+    max-width: calc( $break_xs - 20% );
+  }
+}
+
+@mixin wrapper-full {
+  width: 100%;
+
+  @include wrapper-offset($offset);
+}
+
+@mixin row-wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include row-offset($offset);
+}
+
+@mixin col($col) {
+  display: block;
+  width: calc(100% / $col);
+
+  @include wrapper-offset($offset);
+}
+
+@mixin xl($name, $value) {
+  @media screen and (max-width: $break_xl) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xl-block() {
+  @media screen and (max-width: $break_xl) {
+    @content;
+  }
+}
+
+@mixin lg($name, $value) {
+  @media screen and (max-width: $break_lg) {
+    #{$name}: $value;
+  }
+}
+
+@mixin lg-block() {
+  @media screen and (max-width: $break_lg) {
+    @content;
+  }
+}
+
+@mixin md($name, $value) {
+  @media screen and (max-width: $break_md) {
+    #{$name}: $value;
+  }
+}
+
+@mixin md-block() {
+  @media screen and (max-width: $break_md) {
+    @content;
+  }
+}
+
+@mixin sm($name, $value) {
+  @media screen and (max-width: $break_sm) {
+    #{$name}: $value;
+  }
+}
+
+@mixin sm-block() {
+  @media screen and (max-width: $break_sm) {
+    @content;
+  }
+}
+
+@mixin xs($name, $value) {
+  @media screen and (max-width: $break_xs) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xs-block() {
+  @media screen and (max-width: $break_xs) {
+    @content;
+  }
+}
+
+@mixin xxs($name, $value) {
+  @media screen and (max-width: $break_xxs) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xxs-block() {
+  @media screen and (max-width: $break_xxs) {
+    @content;
+  }
+}
