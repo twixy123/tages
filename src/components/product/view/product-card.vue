@@ -48,7 +48,7 @@
       <CardSmallAction
         @click="desireListStore.changeDesireListProductsState(product)"
       >
-        <HeartIcon v-if="inDesireList" :class="['red--text']" />
+        <HeartFillIcon v-if="inDesireList" :class="['red--text']" />
         <HeartIcon v-else />
       </CardSmallAction>
     </CardSmallActionsWrapper>
@@ -68,8 +68,9 @@ import CardSmallActionsWrapper from '@/components/cards/card-small-actions-wrapp
 import CardSmallAction from '@/components/cards/card-small-action.vue'
 
 import ShoppingCartIcon from '@/assets/icons/shopping-cart.svg?component'
-import HeartIcon from '@/assets/icons/heart.svg?component'
 import CircleChecked from '@/assets/icons/circle-checked.svg?component'
+import HeartIcon from '@/assets/icons/heart.svg?component'
+import HeartFillIcon from '@/assets/icons/heart-fill.svg?component'
 
 import type Product from '@/interfaces/responses/product-rack-systems'
 

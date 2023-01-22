@@ -43,18 +43,20 @@ const $style = useCssModule()
   @include wrapper();
 
   .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     padding-top: 32px;
     padding-bottom: 32px;
+    position: relative;
+    padding-right: 100px;
   }
 
   .actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: absolute;
+    top: 16px;
+    right: 0;
+    column-gap: 12px;
   }
 }
 </style>

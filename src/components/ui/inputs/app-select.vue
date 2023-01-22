@@ -130,6 +130,7 @@ $input-offset-md: 30px;
   font-weight: 400;
   line-height: $input-offset;
   letter-spacing: 0.3px;
+  color: map-get($shades, 'black');
 
   select {
     cursor: pointer;
@@ -142,6 +143,7 @@ $input-offset-md: 30px;
     position: relative;
     z-index: 2;
     font: inherit;
+    color: inherit;
   }
 
   .swap-btn {
@@ -155,6 +157,7 @@ $input-offset-md: 30px;
     right: 0;
     cursor: pointer;
     z-index: 1;
+    color: inherit;
     
     svg {
       width: 18px;
@@ -170,6 +173,7 @@ $input-offset-md: 30px;
     color: map-get($shades, 'black');
     padding-left: $left-padding;
     font: inherit;
+    color: inherit;
   }
 
   @include md-block() {

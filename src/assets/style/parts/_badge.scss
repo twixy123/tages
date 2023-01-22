@@ -1,0 +1,12 @@
+.badge {
+  font-size: 11px;
+  color: map-get($shades, 'white');
+  padding: 2px;
+  padding-bottom: 1px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(map-get($red, 'base'), .6);
+  line-height: 1;
+}

@@ -91,7 +91,7 @@ function onClose () {
   z-index: 100;
 }
 
-.sidebar__wrapper {
+.sidebar .sidebar__wrapper {
   padding: 16px;
   height: 100vh;
   width: 320px;
@@ -113,7 +113,7 @@ function onClose () {
   }
 }
 
-.sidebar__close {
+.sidebar .sidebar__close {
   position: absolute;
   top: 10px;
   left: -40px;

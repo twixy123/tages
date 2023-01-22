@@ -18,7 +18,6 @@ buid:
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
     - docker pull "${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}" || docker pull "${DOCKER_REPO}:main" || true
-    - docker pull "${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}" || true
     - docker build --pull --cache-from "${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}" --cache-from "${DOCKER_REPO}:main" -t "${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}" .
     - docker push "${DOCKER_REPO}:${CI_ENVIRONMENT_NAME}"
 

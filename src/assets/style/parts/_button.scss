@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .btn--icon {
@@ -13,6 +14,36 @@
   height: 36px;
 
   svg {
+    color: map-get($shades, 'black');
     width: 20px;
+  }
+
+  &.btn--badge {
+    .badge {
+      top: 100%;
+      right: 0;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.btn--lg {
+  &.btn--icon {
+    width: 44px;
+    height: 44px;
+
+    svg {
+      width: 30px;
+    }
+  }
+
+  
+}
+
+.btn--badge {
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }

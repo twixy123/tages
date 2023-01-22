@@ -79,16 +79,9 @@ function onRemove () {
   min-height: 100px;
   border-bottom: 1px solid map-get($grey, 'darken-3');
   position: relative;
-
-  &:hover {
-    & .btn__close {
-      opacity: 1;
-    }
-  }
 }
 
 .card .btn__close {
-  opacity: 0;
   position: absolute;
   width: 20px;
   height: 20px;

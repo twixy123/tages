@@ -13,9 +13,9 @@ export const useProductsRackSystemsStore = defineStore({
     }
   },
   actions: {
-    getProducts (options?: ProductsRequestOptions): Product[] {
-      let products = productResponse as Product[]
-      
+    getProducts (options?: ProductsRequestOptions): Product[] {      
+      let products = JSON.parse(JSON.stringify(productResponse)) as Product[]
+
       this.products = []
 
       if (options?.filterBy) {
