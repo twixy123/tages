@@ -4,12 +4,13 @@ import type { RouteRecordRaw } from 'vue-router'
 import storageSystemsRoutes from './storage-systems'
 
 import setPageTitle from '@/helpers/set-page-title'
+import getRoutePath from '@/helpers/routes'
 
 import HomePage from '@/pages/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: getRoutePath('main'),
     name: 'Main',
     component: HomePage,
     meta: {

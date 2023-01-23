@@ -1,8 +1,9 @@
 import type { RouteRecordRaw } from 'vue-router'
+import getRoutePath from '@/helpers/routes'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/storage-systems',
+    path: getRoutePath('storageSystems'),
     name: 'Storage Systems',
     component: () => import('@/pages/storage-systems/index.vue'),
     meta: {
@@ -11,7 +12,7 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
-    path: '/storage-systems/rack-systems',
+    path: getRoutePath('rackSystems'),
     name: 'Racking System',
     component: () => import('@/pages/storage-systems/rack-systems/index.vue'),
     meta: {
@@ -20,7 +21,7 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
-    path: '/storage-systems/rack-systems/:id',
+    path: getRoutePath('rackSystemItem'),
     name: 'Racking System Item',
     component: () => import('@/pages/storage-systems/rack-systems/_id.vue'),
     meta: {

@@ -26,12 +26,12 @@ export default defineComponent({
 
   @include row-wrap();
 
-  & > div {
+  & > * {
     @include col(4)
   }
 
   @include lg-block () {
-    & > div {
+    & > * {
       @include col(3)
     }
   }
@@ -40,19 +40,19 @@ export default defineComponent({
     row-gap: 32px;
     @include row-offset(20px);
 
-    & > div {
+    & > * {
       @include wrapper-offset(20px)
     }
   }
 
   @include sm-block () {
-    & > div {
+    & > * {
       @include col(2)
     }
   }
 
   @include xs-block () {
-    & > div {
+    & > * {
       @include col(1)
     }
   }

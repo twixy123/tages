@@ -1,8 +1,10 @@
 <template>
   <div :class="[style['block']]">
-    <h1>Tages</h1>
+    <h1 :class="['header--bold']">
+      Tages
+    </h1>
 
-    <RouterLink :to="{name: 'Storage Systems'}">
+    <RouterLink :to="getRoutePath('storageSystems')">
       Системы хранения
     </RouterLink>
   </div>
@@ -11,6 +13,7 @@
 <script lang="ts">
 import { defineComponent, useCssModule } from 'vue'
 import { RouterLink } from 'vue-router'
+import getRoutePath from '@/helpers/routes'
 
 export default defineComponent({
   name: 'MainPage',
@@ -19,7 +22,8 @@ export default defineComponent({
 
     return {
       style,
-      RouterLink
+      RouterLink,
+      getRoutePath
     }
   }
 })

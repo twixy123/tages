@@ -1,6 +1,8 @@
 <template>
   <div :class="[$style['block']]">
-    <h1>Комплекты стеллажных систем</h1>
+    <h1 :class="['header--bold']">
+      Комплекты стеллажных систем
+    </h1>
 
     <InlineBarWrapper :class="[$style['select-bar']]">
       <FieldDescriptionWrapper>
@@ -27,12 +29,16 @@
     </InlineBarWrapper>
 
     <CardsWrapper :class="[$style['product-cards']]">
-      <div v-for="product in productRackSystemStore.products" :key="product.id">
+      <RouterLink
+        v-for="product in productRackSystemStore.products"
+        :key="product.id"
+        :to="getRoutePath('rackSystemItem', [product.id])"
+      >
         <ProductCard
           :product="product"
           :at-discount="!!product.price.old_price"
         />
-      </div>
+      </RouterLink>
     </CardsWrapper>
   </div>
 </template>
@@ -62,9 +68,11 @@ import type {
 } from '@/interfaces/requests/product-rack-systems'
 
 import { useCssModule, ref, onBeforeMount, computed } from 'vue'
+import { RouterLink } from 'vue-router'
 import { useProductsRackSystemsStore } from '@/stores/products-rack-systems'
 
 import { priceOptions, nameOptions } from '@/constants/select-options'
+import getRoutePath from '@/helpers/routes'
 
 const $style = useCssModule()
 const productRackSystemStore = useProductsRackSystemsStore()

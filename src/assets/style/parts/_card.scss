@@ -73,6 +73,7 @@
     &__name {
       line-height: 1.4;
       margin-bottom: 10px;
+      color: map-get($shades, 'black');
       
   
       @include md(font-size, 14px);
@@ -87,6 +88,7 @@
     
     &__price {
       line-height: 1.4;
+      color: map-get($shades, 'black');
     
       &--discount {
         text-decoration: line-through;
