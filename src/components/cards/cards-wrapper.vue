@@ -1,7 +1,7 @@
 <template>
-  <div :class="[style['wrapper']]">
+  <ul :class="[style['wrapper']]">
     <slot />
-  </div>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -21,6 +21,7 @@ export default defineComponent({
 
 <style lang="scss" module>
 .wrapper {
+  list-style: none;
   row-gap: 40px;
   align-items: stretch;
 

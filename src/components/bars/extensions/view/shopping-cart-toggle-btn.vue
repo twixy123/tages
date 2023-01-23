@@ -1,5 +1,5 @@
 <template>
-  <button :class="['btn btn--icon btn--badge btn--lg']" @click="openSidebar">
+  <button aria-label="open shopping cart" :class="['btn btn--icon btn--badge btn--lg']" @click="openSidebar">
     <ShoppingCartIcon />
     <span v-if="shppingCartStore.products?.length" :class="['badge']">
       {{ shppingCartStore.products.length }}

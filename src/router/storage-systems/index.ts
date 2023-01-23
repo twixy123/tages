@@ -8,7 +8,13 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/storage-systems/index.vue'),
     meta: {
       layout: 'main',
-      title: 'Система Хранения'
+      title: 'Система Хранения',
+      meta: [
+        {
+          name: 'description',
+          content: 'Раздел для систем хранения мебельных изделий'
+        }
+      ]
     },
   },
   {
@@ -17,7 +23,13 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/storage-systems/rack-systems/index.vue'),
     meta: {
       layout: 'main',
-      title: 'Комплекты стеллажных систем'
+      title: 'Комплекты стеллажных систем',
+      meta: [
+        {
+          name: 'description',
+          content: 'Раздел комплектов стеллажных систем. Тут вы найдете список продуктов, выбрав которые вы никогда не будете жалеть.'
+        }
+      ]
     },
   },
   {
@@ -26,7 +38,13 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/storage-systems/rack-systems/_id.vue'),
     meta: {
       layout: 'main',
-      title: 'Комплекты стеллажных систем'
+      title: 'Комплекты стеллажных систем',
+      meta: [
+        {
+          name: 'description',
+          content: 'Комплет стеллажных систем. Выбрав этот продукт вы долгие года сможете пользоваться своим изделием.'
+        }
+      ]
     },
   },
 ]

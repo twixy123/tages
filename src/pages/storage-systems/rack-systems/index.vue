@@ -29,16 +29,14 @@
     </InlineBarWrapper>
 
     <CardsWrapper :class="[$style['product-cards']]">
-      <RouterLink
-        v-for="product in productRackSystemStore.products"
-        :key="product.id"
-        :to="getRoutePath('rackSystemItem', [product.id])"
-      >
-        <ProductCard
-          :product="product"
-          :at-discount="!!product.price.old_price"
-        />
-      </RouterLink>
+      <li v-for="product in productRackSystemStore.products" :key="product.id">
+        <RouterLink :to="getRoutePath('rackSystemItem', [product.id])">
+          <ProductCard
+            :product="product"
+            :at-discount="!!product.price.old_price"
+          />
+        </RouterLink>
+      </li>
     </CardsWrapper>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <button :class="['btn btn--icon btn--badge btn--lg']" @click="openSidebar">
+  <button aria-label="open desire list" :class="['btn btn--icon btn--badge btn--lg']" @click="openSidebar">
     <HeartFillIcon :class="['red--text']" />
     <span v-if="desireListStore.products?.length" :class="['badge']">
       {{ desireListStore.products.length }}

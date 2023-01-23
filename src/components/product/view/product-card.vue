@@ -1,5 +1,5 @@
 <template>
-  <div :class="[$style['card'], 'card']">
+  <article :class="[$style['card'], 'card']">
     <div v-if="props.atDiscount" :class="[$style['card__discount']]">
       Скидка
     </div>
@@ -14,7 +14,7 @@
       >
         <span :class="['card-image__empty-icon']">?</span>
         <div v-if="product.image?.url" :class="['card-image__content']">
-          <img :src="`${product.image.url}`" alt="">
+          <img :src="`${product.image.url}`" :alt="product.name">
         </div>
       </div>
     </div>
@@ -22,9 +22,9 @@
       <p v-if="product.code" :class="['card-description__code']">
         {{ product.code }}
       </p>
-      <h4 :class="['card-description__name']">
+      <h3 :class="['card-description__name']">
         {{ product.name }}
-      </h4>
+      </h3>
       <div :class="['card-description__price-wrapper']">
         <p
           v-if="props.atDiscount"
@@ -40,19 +40,21 @@
 
     <CardSmallActionsWrapper :class="[$style['card__actions']]">
       <CardSmallAction
+        :aria-label="`put the product - ${product.name} to shopping cart`"
         @click="shoppingCartStore.changeShoppingCartProductsState(product)"
       >
         <CircleChecked v-if="inCart" :class="['green--text']" />
         <ShoppingCartIcon v-else />
       </CardSmallAction>
       <CardSmallAction
+        :aria-label="`put the product - ${product.name} to desire list`"
         @click="desireListStore.changeDesireListProductsState(product)"
       >
         <HeartFillIcon v-if="inDesireList" :class="['red--text']" />
         <HeartIcon v-else />
       </CardSmallAction>
     </CardSmallActionsWrapper>
-  </div>
+  </article>
 </template>
 
 <script lang="ts">

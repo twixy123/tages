@@ -11,6 +11,7 @@
         ]"
       >
         <button
+          aria-label="close sidebar"
           :class="['btn btn--icon', $style['sidebar__close']]"
           @click="onClose"
         >

@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 
 import storageSystemsRoutes from './storage-systems'
 
-import setPageTitle from '@/helpers/set-page-title'
+import setPageSeo from '@/helpers/set-page-seo'
 import getRoutePath from '@/helpers/routes'
 
 import HomePage from '@/pages/index.vue'
@@ -15,7 +15,13 @@ const routes: RouteRecordRaw[] = [
     component: HomePage,
     meta: {
       layout: 'main',
-      title: 'Главная'
+      title: 'Главная',
+      meta: [
+        {
+          name: 'description',
+          content: 'Онлайн магазин, где вы сможете найти все для мебельных работ.'
+        }
+      ]
     }
   },
   ...storageSystemsRoutes
@@ -32,7 +38,10 @@ export const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  setPageTitle(to.meta.title as string || '')  
+  setPageSeo({
+    title: to.meta.title as string || to.name as string || '',
+    meta: (to.meta.meta as HTMLMetaElement[]).length ? to.meta.meta as HTMLMetaElement[] : null
+  })
 })
 
 function findBreadcrumbs (path: string, routes: RouteRecordRaw[]) {

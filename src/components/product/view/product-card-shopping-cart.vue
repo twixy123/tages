@@ -1,6 +1,6 @@
 <template>
   <div :class="[$style['card'], 'card']">
-    <button :class="['btn btn--icon', $style['btn__close']]" @click="onRemove">
+    <button aria-label="remove from list" :class="['btn btn--icon', $style['btn__close']]" @click="onRemove">
       <CrossIcon />
     </button>
     <div :class="['card-image', $style['card-image']]">
